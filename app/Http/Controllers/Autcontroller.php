@@ -19,4 +19,8 @@ class Autcontroller extends Controller
         //*using trait
         return $this->ok($request->get('email')); 
     }
+
+    public function register(){
+        return $this->ok('Register Success');
+    }
 }
