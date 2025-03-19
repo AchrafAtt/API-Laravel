@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Autcontroller;
+use App\Http\Controllers\Api\Autcontroller;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,4 +15,7 @@ Route::get ('/tickets', function() {
     return Ticket::all();
 }
 );
+
+Route::middleware('auth:sanctum')-> post('/logout', [Autcontroller::class,'logout']);
+
 

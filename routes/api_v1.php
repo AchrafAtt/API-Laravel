@@ -11,4 +11,7 @@ Route::get('/user', function (Request $request) {
 
 //?apiResource is a method that creates multiple routes for a resource controller and give us ability to specify which methods we want to include in the controller
 
-Route::apiResource('tickets', TicketController::class);
+//*to protect the routes we need to add the middleware auth:sanctum
+
+Route::middleware('auth:sanctum')->apiResource('tickets', TicketController::class);
+
